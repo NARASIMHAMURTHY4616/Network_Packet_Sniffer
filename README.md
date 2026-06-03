@@ -239,13 +239,13 @@ Benefits:
 Clone repository:
 
 ```bash
-git clone https://github.com/yourusername/BPS.git
+git clone https://github.com/NARASIMHAMURTHY4616/Network_Packet_Sniffer.git
 ```
 
 Move into project:
 
 ```bash
-cd BPS
+cd Network_Packet_Sniffer
 ```
 
 Install dependencies:
@@ -267,20 +267,6 @@ streamlit run main.py
 The packet capture engine starts automatically in the background.
 
 ---
-
-# 📦 Requirements
-
-```txt
-streamlit
-pandas
-scapy
-```
-
-Install manually:
-
-```bash
-pip install streamlit pandas scapy
-```
 
 ---
 
