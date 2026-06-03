@@ -1,4 +1,5 @@
 # Packet Sniffer & DFIR Dashboard
+installing -> (https://github.com/NARASIMHAMURTHY4616/Network_Packet_Sniffer/blob/main/README.md#-installation)
 
 A Python-based Network Monitoring and DFIR Dashboard that captures live network traffic using Scapy and visualizes packet activity through an interactive Streamlit interface.
 
