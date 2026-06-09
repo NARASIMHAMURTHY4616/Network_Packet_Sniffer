@@ -85,7 +85,7 @@ def packet_detect():
         prn=process_packet,
         store=False
     )
-    print("="*50)
+  '''  print("="*50)
     stats=packet_counter(ui_packets)
     print("-----------------")
     print("|protocol| count ")
@@ -93,7 +93,7 @@ def packet_detect():
         print(f"| {pro}    |  {cn} ")
 
     print("total_packets -->",total_packets)
-      
+     ''' 
 def packet_show(packet):
     for key,value in packet.items():
         #data sent to the Total_packets for saving them and for future usage in web views
