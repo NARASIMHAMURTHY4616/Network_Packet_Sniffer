@@ -4,3 +4,4 @@ json
 threading
 pandas
 streamlit
+scapy
