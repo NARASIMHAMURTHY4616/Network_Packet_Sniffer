@@ -85,7 +85,7 @@ def packet_detect():
         prn=process_packet,
         store=False
     )
-  '''  print("="*50)
+    '''  print("="*50)
     stats=packet_counter(ui_packets)
     print("-----------------")
     print("|protocol| count ")
