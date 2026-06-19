@@ -41,6 +41,7 @@ def packet_analyzer(packet):
     src_port = ""
     dst_port = ""
     flags=""
+    ip_version="unknown"
     dnsq=""
     #adding analyzed data guys
     if packet.haslayer(IP):
@@ -75,8 +76,8 @@ def packet_analyzer(packet):
     "protocol": protocol,
     "ip_version": ip_version,
 
-    "source_port": src_port,
-    "destination_port": dst_port,
+    "src_port": src_port,
+    "dst_port": dst_port,
 
     "service": service,
 
