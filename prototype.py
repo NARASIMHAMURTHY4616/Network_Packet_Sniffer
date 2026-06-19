@@ -9,6 +9,13 @@ total_packets=0
 
 ui_packets = []      # Last 500 packets (UI)
 export_packets = []     # Full capture (Exports)
+SERVICES = {
+    80: "HTTP",
+    443: "HTTPS",
+    53: "DNS",
+    22: "SSH",
+    21: "FTP",
+}
 def process_packet(packet):
     global total_packets
 
@@ -33,13 +40,6 @@ def packet_analyzer(packet):
     dst_port = ""
     flags=""
     dnsq=""
-    SERVICES = {
-    80: "HTTP",
-    443: "HTTPS",
-    53: "DNS",
-    22: "SSH",
-    21: "FTP",
-}
     #adding analyzed data guys
     if packet.haslayer(IP):
         src_ip=packet[IP].src
