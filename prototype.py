@@ -22,7 +22,9 @@ def process_packet(packet):
     total_packets += 1
 
     data = packet_analyzer(packet)
-
+    
+    # engine_analyze(data)
+    
     export_packets.append(data)
 
     ui_packets.append(data)
@@ -43,10 +45,12 @@ def packet_analyzer(packet):
     #adding analyzed data guys
     if packet.haslayer(IP):
         src_ip=packet[IP].src
-        dst_ip=packet[IP].dst    
+        dst_ip=packet[IP].dst
+        ip_version = "IPv4"
     elif packet.haslayer(IPv6):
         src_ip=packet[IPv6].src
-        dst_ip=packet[IPv6].dst 
+        dst_ip=packet[IPv6].dst
+        ip_version = "IPv6"
     if packet.haslayer(UDP):
         protocol="UDP"
         src_port=packet[UDP].sport
@@ -60,21 +64,30 @@ def packet_analyzer(packet):
         protocol="ICMP"
     if packet.haslayer(DNSQR):
         dnsq = packet[DNSQR].qname.decode(errors="ignore")
-    service = SERVICES.get(dst_port, "Unknown")
+    service = SERVICES.get(dst_port, "unknown")
     return {
-        "packet_number":total_packets,
-        "Time_Stamp":time_stamp,
-        "source_ip":src_ip,
-        "destination_ip":dst_ip,
-        "protocol":protocol,
-        "source_port":src_port,
-        "destination_port":dst_port,
-        "service": service,
-        "flags":flags,
-        "dns_query":dnsq,
-        "packet_length" :len(packet),
-        "info":packet.summary()
-    }
+    "packet_id": total_packets,
+    "timestamp": time_stamp,
+
+    "src_ip": src_ip,
+    "dst_ip": dst_ip,
+
+    "protocol": protocol,
+    "ip_version": ip_version,
+
+    "source_port": src_port,
+    "destination_port": dst_port,
+
+    "service": service,
+
+    "flags": flags,
+
+    "dns_query": dnsq,
+
+    "packet_length": len(packet),
+
+    "info": packet.summary()
+}
 
 def packet_counter(ui_packets):
     return c(packet["protocol"] for packet in ui_packets if packet["protocol"])
