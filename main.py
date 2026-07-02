@@ -56,7 +56,7 @@ st.markdown("""
 <style>
 
 .main {
-    background-color:#0e1117;
+    background-color:#0e171a;
 }
 
 div[data-testid="metric-container"]{
