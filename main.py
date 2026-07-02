@@ -19,7 +19,7 @@ st.set_page_config(
 )
 
 # Auto Refresh Every 2 Seconds
-st_autorefresh(interval=2000, key="bps_refresh")
+st_autorefresh(interval=1500, key="bps_refresh")
 
 # ==========================
 # START SNIFFER ONCE
